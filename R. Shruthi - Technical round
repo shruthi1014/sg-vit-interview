@@ -1,0 +1,58 @@
+// Finding duplicate words in a sentence
+Algo:
+Traverse through the sentence and find all words, store it in an associative array and find the duplicates.
+Find duplicates:
+$s=”What is happening? What are you doing?”;
+$i=0;
+$j=0;
+For($i=0;$i<length($s);$i++)
+{
+	$j=$i+1;
+	While($j!=’ ‘ && $j!=’\0’)
+		{
+			$j++;
+		}
+	$str=substr($s,$i,$j-$i);
+	$arr[$str]++;
+}
+For($dup in $arr)
+{
+	If($dup.value>=2)
+	Echo $dup.key;
+}
+
+
+
+
+
+
+
+
+Javascript
+Print the pattern:
+5
+4  4
+3  3  3
+2  2  2  2  2
+1  1  1  1  1  1
+
+Var i=5;
+Var count=1;
+Var c=I;
+While(count<=c)
+{
+	For(var j=1;j<=count;j++)
+		Print(i+” “);
+	Print(“\n”);
+	Count++;
+	i--;
+}
+
+SQL Queries:
+Table 1
+Id  Name
+Table 2
+Address Id
+
+SELECT Id, Name, Address from Table1,Table2 WHERE Table1.Id=Table2.Id
+SELECT Id from Table1 WHERE Id = (SELECT Id from Table2 GROUP BY Id HAVING count(Id)>=2)
